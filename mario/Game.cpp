@@ -159,9 +159,7 @@ void Game::updateRigidBodyGameObjects(Player& player)
 {
 	//refreshing moving objects
 	GameObjectManager<AbstractRigidbodyGameObject>::Node* m = _gameRigidObjectsManager->getNodeHead();
-	int i = 0;
-	while (m != nullptr) {
-		i++;
+	while (m != nullptr){
 		m->gameObject->update(_deltaTime);
 		detectCollisions(&player, m);
 		disposeOffScreenObjects(m);
