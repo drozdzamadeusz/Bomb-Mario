@@ -1,13 +1,13 @@
 #include "Game.hpp"
 
-Game::Game() :
-	_gameState(UNINITIALIZED)
+Game::Game():
+_gameState(UNINITIALIZED)
 {
 	srand(time(NULL));
 	
 	sf::RenderWindow _window;
-    sf::Clock _timer;
-    float _deltaTime;
+	sf::Clock _timer;
+	float _deltaTime;
 	
 	_bombTexture.loadFromFile(Utils::resourcePath() + "bomb.png");
 	_appleTexture.loadFromFile(Utils::resourcePath() + "apple.png");
@@ -60,36 +60,36 @@ void Game::initRound()
 
 void Game::run()
 {
-    if (_gameState != UNINITIALIZED){
-        return;
-    }
+	if (_gameState != UNINITIALIZED){
+		return;
+	}
 
-    _window.create(sf::VideoMode(width, height), title);
+	_window.create(sf::VideoMode(width, height), title);
 
 	_window.setVerticalSyncEnabled(true);
 	
-    _gameState = RUNNING;
+	_gameState = RUNNING;
  
-    _deltaTime = 0.0f;
+	_deltaTime = 0.0f;
 
-    sf::Texture playerTexture;
-    playerTexture.loadFromFile(Utils::resourcePath() + "supermario.png");
-	
-    Player player(&playerTexture, sf::Vector2u(3, 2), 0.1f, 130.0f, 75);
-    player.setPosition(0, height - 45);
-    
-    // set background for game
-    GameObject background (Game::width, Game::height);
-    background.setTexture(Utils::resourcePath() + "background.png");
+	sf::Texture playerTexture;
+	playerTexture.loadFromFile(Utils::resourcePath() + "supermario.png");
 
-    // ground
-    GameObject p1(Game::width, 16);
-    p1.setTextureRepeat(true);
-    p1.setPosition(0, Game::height - 16);
-    p1.setTexture(Utils::resourcePath() + "stage.png");
+	Player player(&playerTexture, sf::Vector2u(3, 2), 0.1f, 130.0f, 75);
+	player.setPosition(0, height - 45);
+
+	// set background for game
+	GameObject background (Game::width, Game::height);
+	background.setTexture(Utils::resourcePath() + "background.png");
+
+	// ground
+	GameObject p1(Game::width, 16);
+	p1.setTextureRepeat(true);
+	p1.setPosition(0, Game::height - 16);
+	p1.setTexture(Utils::resourcePath() + "stage.png");
 
 	_gameStaticObjectsManager.addItem(&background, "background");
-    _gameStaticObjectsManager.addItem(&p1, "ground");
+	_gameStaticObjectsManager.addItem(&p1, "ground");
 
 	// gui background
 	GameObject guiBackground(Game::width, 66);
@@ -118,11 +118,11 @@ void Game::run()
 	_gameStaticMenuObjects.addItem(&heartFull, "heartFull");
 	_gameStaticMenuObjects.addItem(&gameOverBackground, "gameOverBackground");
 	
-    while (_isRunning()){
-        _loop(player);
-    }
+	while (_isRunning()){
+		_loop(player);
+	}
 	
-    _window.close();
+	_window.close();
 }
 
 
@@ -301,12 +301,12 @@ void Game::handleNextLevels(Game::Level level, float deltaTime)
 
 void Game::_loop(Player& player)
 {
-    _deltaTime = _timer.restart().asSeconds();
+	_deltaTime = _timer.restart().asSeconds();
     
 	Level level = _levels.at(_currentLevel - 1);
 	
 	// waiting for user action
-    sf::Event e;
+	sf::Event e;
     while (_window.pollEvent(e)) {
         if (e.type == sf::Event::EventType::Closed) {
             _gameState = EXITING;
