@@ -1,13 +1,13 @@
 #include "Game.hpp"
 
-Game::Game() :
-	_gameState(UNINITIALIZED)
+Game::Game():
+_gameState(UNINITIALIZED)
 {
 	srand(time(NULL));
 	
 	sf::RenderWindow _window;
-    sf::Clock _timer;
-    float _deltaTime;
+	sf::Clock _timer;
+	float _deltaTime;
 	
 	_bombTexture.loadFromFile(Utils::resourcePath() + "bomb.png");
 	_appleTexture.loadFromFile(Utils::resourcePath() + "apple.png");
@@ -64,11 +64,11 @@ void Game::run()
         return;
     }
 
-    _window.create(sf::VideoMode(width, height), title);
+	_window.create(sf::VideoMode(width, height), title);
 
 	_window.setVerticalSyncEnabled(true);
 	
-    _gameState = RUNNING;
+	_gameState = RUNNING;
  
     _deltaTime = 0.0f;
 
@@ -303,12 +303,12 @@ void Game::handleNextLevels(Game::Level level, float deltaTime)
 
 void Game::_loop(Player& player)
 {
-    _deltaTime = _timer.restart().asSeconds();
+	_deltaTime = _timer.restart().asSeconds();
     
 	Level level = _levels.at(_currentLevel - 1);
 	
 	// waiting for user action
-    sf::Event e;
+	sf::Event e;
     while (_window.pollEvent(e)) {
         if (e.type == sf::Event::EventType::Closed) {
             _gameState = EXITING;
