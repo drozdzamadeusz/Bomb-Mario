@@ -60,9 +60,9 @@ void Game::initRound()
 
 void Game::run()
 {
-    if (_gameState != UNINITIALIZED){
-        return;
-    }
+	if (_gameState != UNINITIALIZED){
+		return;
+	}
 
 	_window.create(sf::VideoMode(width, height), title);
 
@@ -70,26 +70,26 @@ void Game::run()
 	
 	_gameState = RUNNING;
  
-    _deltaTime = 0.0f;
+	_deltaTime = 0.0f;
 
-    sf::Texture playerTexture;
-    playerTexture.loadFromFile(Utils::resourcePath() + "supermario.png");
-	
-    Player player(&playerTexture, sf::Vector2u(3, 2), 0.1f, 130.0f, 75);
-    player.setPosition(0, height - 45);
-    
-    // set background for game
-    GameObject background (Game::width, Game::height);
-    background.setTexture(Utils::resourcePath() + "background.png");
+	sf::Texture playerTexture;
+	playerTexture.loadFromFile(Utils::resourcePath() + "supermario.png");
+
+	Player player(&playerTexture, sf::Vector2u(3, 2), 0.1f, 130.0f, 75);
+	player.setPosition(0, height - 45);
+
+	// set background for game
+	GameObject background (Game::width, Game::height);
+	background.setTexture(Utils::resourcePath() + "background.png");
 
     // ground
-    GameObject p1(Game::width, 16);
-    p1.setTextureRepeat(true);
-    p1.setPosition(0, Game::height - 16);
-    p1.setTexture(Utils::resourcePath() + "stage.png");
+	GameObject p1(Game::width, 16);
+	p1.setTextureRepeat(true);
+	p1.setPosition(0, Game::height - 16);
+	p1.setTexture(Utils::resourcePath() + "stage.png");
 
 	_gameStaticObjectsManager.addItem(&background, "background");
-    _gameStaticObjectsManager.addItem(&p1, "ground");
+	_gameStaticObjectsManager.addItem(&p1, "ground");
 
 	// gui background
 	GameObject guiBackground(Game::width, 66);
@@ -118,11 +118,11 @@ void Game::run()
 	_gameStaticMenuObjects.addItem(&heartFull, "heartFull");
 	_gameStaticMenuObjects.addItem(&gameOverBackground, "gameOverBackground");
 	
-    while (_isRunning()){
-        _loop(player);
-    }
+	while (_isRunning()){
+		_loop(player);
+	}
 	
-    _window.close();
+	_window.close();
 }
 
 
