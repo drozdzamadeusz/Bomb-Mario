@@ -82,7 +82,7 @@ void Game::run()
 	GameObject background (Game::width, Game::height);
 	background.setTexture(Utils::resourcePath() + "background.png");
 
-    // ground
+	// ground
 	GameObject p1(Game::width, 16);
 	p1.setTextureRepeat(true);
 	p1.setPosition(0, Game::height - 16);
