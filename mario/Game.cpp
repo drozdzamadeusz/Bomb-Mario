@@ -460,12 +460,10 @@ void Game::detectCollisions(Player* player, GameObjectManager<AbstractRigidbodyG
 				--_lifes;
 			}
 		}
-		else if (node->objectName == "apple")
-		{
+		else if (node->objectName == "apple"){
 			appleCollected();
 
-		}else if(node -> objectName == "life")
-		{
+		}else if(node -> objectName == "life"){
 			if (_lifes < 3) _lifes++;
 
 		}
