@@ -302,18 +302,18 @@ void Game::handleNextLevels(Game::Level level, float deltaTime)
 void Game::_loop(Player& player)
 {
 	_deltaTime = _timer.restart().asSeconds();
-    
+	
 	Level level = _levels.at(_currentLevel - 1);
 	
 	// waiting for user action
 	sf::Event e;
-    while (_window.pollEvent(e)) {
-        if (e.type == sf::Event::EventType::Closed) {
-            _gameState = EXITING;
-        }
-    }
-    
-    _window.clear();
+	while (_window.pollEvent(e)) {
+		if (e.type == sf::Event::EventType::Closed) {
+			_gameState = EXITING;
+		}
+	}
+	
+	_window.clear();
 
 
 	if (_lifes > 0) {
@@ -344,7 +344,7 @@ void Game::_loop(Player& player)
 	}
 	
 	handleNextLevels(level, _deltaTime);
-    _window.display();
+	_window.display();
 }
 
 
@@ -477,11 +477,11 @@ void Game::detectCollisions(Player* player, GameObjectManager<AbstractRigidbodyG
 
 
 bool Game::_isRunning() {
-    if (_gameState != EXITING) {
-        return true;
-    }
-    
-    return false;
+	if (_gameState != EXITING) {
+		return true;
+	}
+	
+	return false;
 }
 
 void Game::disposeDynamicObjects()

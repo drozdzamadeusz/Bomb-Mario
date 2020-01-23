@@ -3,7 +3,7 @@
 template<class T>
 void GameObjectManager<T>::addItem(std::string name, T& gameObject)
 {
-    _objects.insert(std::pair<std::string, T>(name, gameObject));
+	_objects.insert(std::pair<std::string, T>(name, gameObject));
 }
 
 
@@ -22,7 +22,7 @@ GameObjectManager<T>::~GameObjectManager()
 template<class T>
 std::map<std::string, T> GameObjectManager<T>::getObjects()
 {
-    return _objects;
+	return _objects;
 }
 
 */

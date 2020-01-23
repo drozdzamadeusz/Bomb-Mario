@@ -21,7 +21,7 @@
 */
 class Game {
 public:
-    Game();
+	Game();
 	~Game();
 
 	/**
@@ -40,12 +40,12 @@ public:
 	/**
 	 * Displayed window size
 	*/
-    float width, height;
+	float width, height;
 
 	/**
 	 * Displayed window size
 	*/
-    std::string title;
+	std::string title;
 
 
 	/**
@@ -68,13 +68,13 @@ public:
 	/**
 	 * All possible game states
 	*/
-    enum GameState {
-        RUNNING,
-        EXITING,
-        UNINITIALIZED,
-        PAUSE
-    };
-    
+	enum GameState {
+		RUNNING,
+		EXITING,
+		UNINITIALIZED,
+		PAUSE
+	};
+	
 	/**
 	 * Method that is called to run the new game after the initialization of all variables
 	*/
@@ -83,12 +83,12 @@ private:
 	/**
 	 * Current state of the game
 	*/
-    GameState _gameState;
+	GameState _gameState;
 
 	/**
 	 * Window that can serve as a target for 2D drawing
 	*/
-    sf::RenderWindow _window;
+	sf::RenderWindow _window;
 
 	/**
 	 * Variable that defines the behavior of individual levels
@@ -165,17 +165,17 @@ private:
 	/**
 	 * Dynamic list of objects in game - moving (rigidbody) objects in game which are deleted and added to the memory during the game, such as bombs or points
 	*/
-    GameObjectManager<AbstractRigidbodyGameObject>* _gameRigidObjectsManager = nullptr;
+	GameObjectManager<AbstractRigidbodyGameObject>* _gameRigidObjectsManager = nullptr;
 
 	/**
 	 * Method that creates a new dynamic objects - Bombs
 	*/
-    void dropNewBombs(float deltaTime);
+	void dropNewBombs(float deltaTime);
 
 	/**
 	 * Method that creates a new dynamic objects - Apples (Points)
 	*/
-    void dropApple(float deltaTime);
+	void dropApple(float deltaTime);
 
 	/**
 	 * Method that creates a new dynamic objects - Hearts (new lifes)
@@ -195,7 +195,7 @@ private:
 	/**
 	 * Main game loop which is run each frame
 	*/
-    void _loop(Player& player);
+	void _loop(Player& player);
 
 	/**
 	 * Main gui method which handle user interface in general
@@ -205,12 +205,12 @@ private:
 	/**
 	 * Draw gui - collected points
 	*/
-    void renderSocre(float deltaTime);
+	void renderSocre(float deltaTime);
 
 	/**
 	 * Draw gui - current level
 	*/
-    void renderLevel(float deltaTime);
+	void renderLevel(float deltaTime);
 
 	/**
 	 * Draw gui - available lives
@@ -225,7 +225,7 @@ private:
 	/**
 	 * Draw gui - if the player lost show the new reset screen
 	*/
-    void gameOverScreen();
+	void gameOverScreen();
 
 	/**
 	 * Increase the number of points scored by the player
@@ -241,17 +241,17 @@ private:
 	/**
 	 * Check if the game state is not EXITING
 	*/
-    bool _isRunning(void);
-    
+	bool _isRunning(void);
+	
 	/**
 	 * Variable that measures the elapsed time
 	*/
-    sf::Clock _timer;
+	sf::Clock _timer;
 
 	/**
 	 * The time in seconds since the last frame
 	*/
-    float _deltaTime;
+	float _deltaTime;
 
 	/**
 	 * Time since last bomb dropped

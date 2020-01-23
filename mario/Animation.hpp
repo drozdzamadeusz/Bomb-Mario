@@ -13,7 +13,7 @@ public:
 	 * @param number of horizontal and vertical images
 	 * @param time after which the picture change
 	*/
-    Animation(sf::Texture* texture, sf::Vector2u imageCount, float switchTime);
+	Animation(sf::Texture* texture, sf::Vector2u imageCount, float switchTime);
 
 	/**
 	 * Class constructor with the option of choosing the first texture
@@ -28,7 +28,7 @@ public:
 	/**
 	 * Box with current texture
 	*/
-    sf::IntRect uvrect;
+	sf::IntRect uvrect;
 
 	/**
 	 * Update sprie - change texture
@@ -38,28 +38,28 @@ public:
 	 * @param flip horizontal texture
 	 * @param default vertical image
 	 */
-    void update(int row, float deltaTime, bool flipX, bool secondRow, bool defaultV);
-    
+	void update(int row, float deltaTime, bool flipX, bool secondRow, bool defaultV);
+	
 private:
 
 	/**
 	 * Number of horizontal and vertical images
 	 */
-    sf::Vector2u _imageCount;
+	sf::Vector2u _imageCount;
 
 	/**
 	 * Current displayed image
 	 */
-    sf::Vector2u _currentImage;
+	sf::Vector2u _currentImage;
 
 
 	/**
 	 * Sprite total show time
 	 */
-    float _totalTime;
+	float _totalTime;
 
 	/**
 	 * Time of displaying of one texture
 	 */
-    float _switchTime;
+	float _switchTime;
 };
