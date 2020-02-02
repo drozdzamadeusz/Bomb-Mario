@@ -1,5 +1,5 @@
+/** @file */
 #pragma once
-
 
 #include "AbstractRigidbodyGameObject.hpp"
 #include "../GameObject.hpp"

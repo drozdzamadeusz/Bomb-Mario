@@ -1,3 +1,4 @@
+/** @file */
 #pragma once
 
 #include <SFML/Graphics.hpp>
@@ -136,7 +137,7 @@ private:
 			sf::Vector2f(220, 630),
 			sf::Vector2f(5, 9),
 			sf::Vector2f(1.0f, 6),
-			sf::Vector2f(8, 17)
+			sf::Vector2f(10, 17)
 		},
 		{
 			0,
@@ -144,10 +145,10 @@ private:
 			"LEGENDARY",
 			sf::Color(0, 0, 0),
 			sf::Vector2f(0.15f, 0.35f),
-			sf::Vector2f(220, 650),
+			sf::Vector2f(230, 660),
 			sf::Vector2f(7, 10),
 			sf::Vector2f(1.0f, 6),
-			sf::Vector2f(8, 17)
+			sf::Vector2f(9, 17)
 		}
 	};
 

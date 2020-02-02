@@ -1,5 +1,4 @@
-// Platform class
-// Mario can run or jump on it
+/** @file */
 #pragma once
 
 #include <SFML/Graphics.hpp>
